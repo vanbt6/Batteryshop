@@ -1,0 +1,30 @@
+<nav class="nav container alt-navbar">
+        <div class="nav__logo">
+            <h1 class="nav__title">Batteryshop</h1>
+        </div>
+
+        <form class="search-form" onsubmit="return searchProducts(event)">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
+        <ul class="nav__link nav__link--menu">
+            <li class="nav__items">
+                <a href="../index.html" class="nav__links">Inicio</a>
+            </li>
+            <li class="nav__items">
+                <a href="../pages/nosotros.html" class="nav__links">Nosotros</a>
+            </li>
+            <li class="nav__items">
+                <a href="../pages/productos.html" class="nav__links">Productos</a>
+            </li>
+            <li class="nav__items">
+                <a href="../pages/contacto.html" class="nav__links">Contacto</a>
+            </li>
+            <img src="../img/close.svg" alt="Cerrar menú" class="nav__close">
+        </ul>
+
+        <div class="nav__menu">
+            <img alt="Menú" src="../img/menu.svg" class="nav__img">
+        </div>
+</nav>

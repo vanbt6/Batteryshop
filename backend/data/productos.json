@@ -1,0 +1,102 @@
+[
+    {
+    "id": 1,
+    "marca": "canon",
+    "modelo": "LP-E5",
+    "imagen": "/img/canon/lp-e5.png",
+    "precio": 290.00,
+    "especificaciones": "7.4V 1080mAh 8.0Wh",
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "marca": "canon",
+    "modelo": "LP-E6",
+    "imagen": "/img/canon/lp-e6.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 3,
+    "marca": "canon",
+    "modelo": "LP-E6C",
+    "imagen": "/img/canon/lp-e6c.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+
+  },
+  {
+    "id": 4,
+    "marca": "canon",
+    "modelo": "LP-E8",
+    "imagen": "/img/canon/lp-e8.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 5,
+    "marca": "canon",
+    "modelo": "LP-E10",
+    "imagen": "/img/canon/lp-e10.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 6,
+    "marca": "canon",
+    "modelo": "LP-E12",
+    "imagen": "/img/canon/lp-e12.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 7,
+    "marca": "canon",
+    "modelo": "LP-E12C",
+    "imagen": "/img/canon/lp-e12c.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 8,
+    "marca": "canon",
+    "modelo": "LP-E17",
+    "imagen": "../public/img/canon/lp-e17c.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 9,
+    "marca": "canon",
+    "modelo": "NB-6L",
+    "imagen": "/img/canon/nb-6l.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 10,
+    "marca": "canon",
+    "modelo": "NB-11L",
+    "imagen": "/img/canon/nb-11l.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  },
+  {
+    "id": 11,
+    "marca": "canon",
+    "modelo": "NB-13L",
+    "imagen": "/img/canon/nb-13l.png",
+    "precio": 310.00,
+    "especificaciones": "7.2V 1800mAh 13.0Wh",
+    "stock": 8
+  }
+]

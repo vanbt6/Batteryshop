@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/camaras.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <title>Baterias para camaras</title>
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="categorias">
+            <h2 class="subtitle">Filtrar por marcas</h2>
+            <div class="categories-grid">
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="canon">
+                    <img src="../backend/public/img/marcas/canon.png" alt="Canon">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="nikon">
+                    <img src="../backend/public/img/marcas/nikon.png" alt="Nikon">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="sony">
+                    <img src="../backend/public/img/marcas/sony.png" alt="Sony">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="panasonic">
+                    <img src="../backend/public/img/marcas/panasonic.png" alt="Panasonic">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="fuji">
+                    <img src="../backend/public/img/marcas/fuji.png" alt="Fuji">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="kodak">
+                    <img src="../backend/public/img/marcas/kodak.png" alt="Kodak">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="olympus">
+                    <img src="../backend/public/img/marcas/olympus.png" alt="Olympus">
+                </label>
+                <label class="checkbox-marca">
+                    <input type="checkbox" class="filtro-marca" value="samsung">
+                    <img src="../backend/public/img/marcas/samsung.png" alt="Samsung">
+                </label>
+            </div>
+        </section>
+
+
+        <section class="contenedor">
+            <!--Contenedor de los articulos-->
+            <div class="contenedor-items" id="productos-container">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+
+            <!-- Añade este modal para detalles de producto -->
+            <div class="modal" id="modal-producto">
+                <div class="modal-contenido">
+                    <span class="cerrar-modal">&times;</span>
+                    <div class="modal-body" id="modal-body">
+                        <!-- Contenido dinámico -->
+                    </div>
+                </div>
+            </div>
+
+            <!--Carrito de compras-->
+            <div class="carrito" id="carrito-container">
+                <div class="header-carrito">
+                    <h2>Tu carrito</h2>
+                </div>
+
+                <!-- Aquí agregaremos los ítems con JavaScript -->
+                <div class="carrito-items"></div>
+                <div class="carrito-total">
+                    <div class="fila">
+                        <strong>Tu total</strong>
+                        <span id="carrito-precio-total"" class="carrito-precio-total">
+                            $0.00
+                        </span>
+                    </div>
+                    <button id="btn-pagar" class="btn-pagar">Pagar<i class="fa-solid fa-bag-shopping"></i></button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Paginación -->
+        <div class="paginacion">
+            <button class="btn-paginacion" id="btn-anterior">Anterior</button>
+            <span class="info-paginacion" id="info-pagina">Página 1</span>
+            <button class="btn-paginacion" id="btn-siguiente">Siguiente</button>
+        </div>
+
+        <section class="banner">
+            <a href="camaras.html"><img src="../backend/public/img/banner/camaras_reflex.jpg" class="banner__img"
+                    alt="camara reflex"></a>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script type="module" src="../js/productos.js"></script>
+    <script type="module" src="../js/includes.js"></script>
+    <script type="module" src="../js/search.js"></script>
+    <script type="module" src="../js/carrito.js"></script>
+    <script type="module" src="../js/menu.js"></script>
+    <script type="module" src="../js/filtro-marcas.js"></script>
+</body>
+
+</html>
