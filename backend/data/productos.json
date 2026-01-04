@@ -1,102 +1,53 @@
 [
-    {
+  {
     "id": 1,
-    "marca": "canon",
-    "modelo": "LP-E5",
-    "imagen": "/img/canon/lp-e5.png",
-    "precio": 290.00,
-    "especificaciones": "7.4V 1080mAh 8.0Wh",
-    "stock": 15
+    "name": "Bateria Acido plomo FRASA de 6v - 12Ah",
+    "price": 750,
+    "oldPrice": 1200,
+    "discount": 40,
+    "image": "https://static.wixstatic.com/media/714b8e_4e0b399c6b284d05b07b5deb8dc6e444~mv2.jpeg",
+    "category": "ofertas",
+    "carousel": 1
   },
   {
     "id": 2,
-    "marca": "canon",
-    "modelo": "LP-E6",
-    "imagen": "/img/canon/lp-e6.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
+    "name": "Bateria Acido plomo FRASA de 12v - 7Ah",
+    "price": 427,
+    "oldPrice": 600,
+    "discount": 30,
+    "image": "https://static.wixstatic.com/media/cbe5c3_227e3d4add444598badc93158ff1500c~mv2_d_4673_3312_s_4_2.jpg",
+    "category": "ofertas",
+    "carousel": 1
   },
   {
     "id": 3,
-    "marca": "canon",
-    "modelo": "LP-E6C",
-    "imagen": "/img/canon/lp-e6c.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-
+    "name": "Pila En-el15 Energy One",
+    "price": 676,
+    "oldPrice": 845,
+    "discount": 20,
+    "image": "https://static.wixstatic.com/media/714b8e_13d0ef8fd6b64520b53d5c545172c357~mv2.jpg",
+    "category": "camaras",
+    "carousel": 2
   },
   {
     "id": 4,
-    "marca": "canon",
-    "modelo": "LP-E8",
-    "imagen": "/img/canon/lp-e8.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
+    "name": "NP-FZ100 Energyone",
+    "price": 720,
+    "oldPrice": 900,
+    "discount": 20,
+    "image": "https://static.wixstatic.com/media/714b8e_c399de72fd894e99a3a6c0af0880aa3b~mv2.jpg",
+    "category": "camaras",
+    "carousel": 2
   },
   {
     "id": 5,
-    "marca": "canon",
-    "modelo": "LP-E10",
-    "imagen": "/img/canon/lp-e10.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 6,
-    "marca": "canon",
-    "modelo": "LP-E12",
-    "imagen": "/img/canon/lp-e12.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 7,
-    "marca": "canon",
-    "modelo": "LP-E12C",
-    "imagen": "/img/canon/lp-e12c.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 8,
-    "marca": "canon",
-    "modelo": "LP-E17",
-    "imagen": "../public/img/canon/lp-e17c.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 9,
-    "marca": "canon",
-    "modelo": "NB-6L",
-    "imagen": "/img/canon/nb-6l.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 10,
-    "marca": "canon",
-    "modelo": "NB-11L",
-    "imagen": "/img/canon/nb-11l.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
-  },
-  {
-    "id": 11,
-    "marca": "canon",
-    "modelo": "NB-13L",
-    "imagen": "/img/canon/nb-13l.png",
-    "precio": 310.00,
-    "especificaciones": "7.2V 1800mAh 13.0Wh",
-    "stock": 8
+    "name": "Bateria 7.2v - 3600Ah",
+    "price": 536.25,
+    "oldPrice": 825,
+    "discount": 35,
+    "image": "https://static.wixstatic.com/media/714b8e_3c55d8a26c38444881bae553701ec770~mv2.jpg",
+    "category": "rc",
+    "carousel": 3
   }
 ]
+

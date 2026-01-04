@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
+
+
 <body>
     <header class="hero">
         <nav class="nav container">
@@ -27,6 +29,13 @@
                 <li class="nav__items">
                     <a href="index.html" class="nav__links">Inicio</a>
                 </li>
+
+                <li class="nav__items">
+                    <a href="carrito.html" class="nav__links">
+                        🛒 Carrito (<span id="cart-count">0</span>)
+                    </a>
+                </li>
+                    
                 <li class="nav__items">
                     <a href="#" class="nav__links">Nosotros</a>
                 </li>
@@ -58,205 +67,42 @@
                 <span class="ofertas-title">¡Descubre las ofertas!</span>
                 <a class="ver-mas" href="#">Ver más</a>
             </h2>
-            <div class="carrousel">
                 <!-- Carousel 1-->
-                <div class="carousel-container">
-                    <div class="carousel" id="carousel-1">
-
-                        <!-- Producto 1 -->
-                        <div class="product">
-                            <span class="discount">-40%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_4e0b399c6b284d05b07b5deb8dc6e444~mv2.jpeg/v1/fill/w_500,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_4e0b399c6b284d05b07b5deb8dc6e444~mv2.jpeg"
-                                alt="Baterías recargables">
-                            <p>Bateria Acido plomo FRASA de 6v - 12Ah Con Cargador para Montable</p>
-                            <p><span class="price-old">$1200.00</span><br><span class="price-new">$750.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 2 -->
-                        <div class="product">
-                            <span class="discount">-30%</span>
-                            <img src="https://static.wixstatic.com/media/cbe5c3_227e3d4add444598badc93158ff1500c~mv2_d_4673_3312_s_4_2.jpg/v1/fill/w_500,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/cbe5c3_227e3d4add444598badc93158ff1500c~mv2_d_4673_3312_s_4_2.jpg"
-                                alt="Proyector">
-                            <p>Bateria Acido plomo FRASA de 12v - 7Ah</p>
-                            <p><span class="price-old">$600.00</span><br><span class="price-new">$427.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 3 -->
-                        <div class="product">
-                            <span class="discount">-25%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_2a2ff5b7656344bab1497f5db451a7aa~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_2a2ff5b7656344bab1497f5db451a7aa~mv2.jpg"
-                                alt="UPS No Break">
-                            <p>2 Baterias Acido plomo FRASA de 6v - 7Ah Con Cargador para Montable</p>
-                            <p><span class="price-old">$1,290.00</span><br><span class="price-new">$980.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 4 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_0cb0d262083242d7ba36e6e13a9e4a13~mv2.jpeg/v1/fill/w_490,h_387,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_0cb0d262083242d7ba36e6e13a9e4a13~mv2.jpeg"
-                                alt="UPS No Break">
-                            <p>Bateria Acido plomo FRASA de 12v - 7Ah Con Cargador para Montable</p>
-                            <p><span class="price-old">$999.00</span><br><span class="price-new">$780.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 5 -->
-                        <div class="product">
-                            <span class="discount">-25%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_81ff69e87c6f45d3a79f6d0b2d97ce0f~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_81ff69e87c6f45d3a79f6d0b2d97ce0f~mv2.jpg"
-                                alt="FRASA6-7">
-                            <p>Bateria Acido plomo FRASA de 6v - 7Ah Con Cargador para Montable</p>
-                            <p><span class="price-old">$860.00</span><br><span class="price-new">$650.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="prev" onclick="moveCarousel('carousel-1', -1)">
-                            <img src="../backend/public/img/left.svg" class="icon-left" alt="left">
-                        </button>
-                        <button class="next" onclick="moveCarousel('carousel-1', 1)">
-                            <img src="../backend/public/img/rigth.svg" class="icon-rigth" alt="rigth">
-                        </button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-container">
+                    <div class="carousel" id="carousel-1"></div>
+                  
+                      <div class="carousel-controls">
+                        <button class="prev" onclick="moveCarousel('carousel-1', -1)">‹</button>
+                        <button class="next" onclick="moveCarousel('carousel-1', 1)">›</button>
+                      </div>
                     </div>
                 </div>
-
+                  
+                  
                 <!-- Carousel 2-->
-                <div class="carousel-container">
-                    <div class="carousel" id="carousel-2">
-
-                        <!-- Producto 1 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_13d0ef8fd6b64520b53d5c545172c357~mv2.jpg/v1/fill/w_490,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_13d0ef8fd6b64520b53d5c545172c357~mv2.jpg"
-                                alt="enel15">
-                            <p>Pila En-el15 Energy One P/nikon Carga Por Cable Tipo C</p>
-                            <p><span class="price-old">$845.00</span><br><span class="price-new">$676.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 2 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_ad8aa16c39f4430e8088354423a33a5f~mv2.jpg/v1/fill/w_490,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_ad8aa16c39f4430e8088354423a33a5f~mv2.jpg"
-                                alt="lpe6">
-                            <p>Lp-e6 Energyone Para Canon Eos Carga X Cable Tipo C</p>
-                            <p><span class="price-old">$770.00</span><br><span class="price-new">$616.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 3 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_c399de72fd894e99a3a6c0af0880aa3b~mv2.jpg/v1/fill/w_490,h_343,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_c399de72fd894e99a3a6c0af0880aa3b~mv2.jpg"
-                                alt="npfz100">
-                            <p>NP-FZ100 Energyone Carga X Usb tipo C Para A9 A7iii A7riii A7riv</p>
-                            <p><span class="price-old">$900.00</span><br><span class="price-new">$720.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 4 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_dec93c87914b4ae59dbb424efefef6ae~mv2.jpg/v1/fill/w_490,h_344,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_dec93c87914b4ae59dbb424efefef6ae~mv2.jpg"
-                                alt="npf750">
-                            <p>Pila NP-F750 Energyone Carga por USB tipo C Lampara Led Y Video</p>
-                            <p><span class="price-old">$1,120.00</span><br><span class="price-new">$896.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 5 -->
-                        <div class="product">
-                            <span class="discount">-10%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_3720f6123be44019812c29c32675c618~mv2.jpg/v1/fill/w_490,h_445,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_3720f6123be44019812c29c32675c618~mv2.jpg"
-                                alt="kit-pilas">
-                            <p>Kit 1 Cargador Usb Doble + 2 Pilas En-el14 Para Nikon</p>
-                            <p><span class="price-old">$2,000.00</span><br><span class="price-new">$1,775.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="prev" onclick="moveCarousel('carousel-2', -1)">
-                            <img src="./img/left.svg" class="icon-left" alt="left">
-                        </button>
-                        <button class="next" onclick="moveCarousel('carousel-2', 1)">
-                            <img src="./img/rigth.svg" class="icon-rigth" alt="rigth">
-                        </button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-container">
+                    <div class="carousel" id="carousel-2"></div>
+                  
+                      <div class="carousel-controls">
+                        <button class="prev" onclick="moveCarousel('carousel-2', -1)">‹</button>
+                        <button class="next" onclick="moveCarousel('carousel-2', 1)">›</button>
+                      </div>
                     </div>
                 </div>
-
+                  
                 <!-- Carousel 3-->
-                <div class="carousel-container">
-                    <div class="carousel" id="carousel-3">
-
-                        <!-- Producto 1 -->
-                        <div class="product">
-                            <span class="discount">-5%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_1dc03c0bf1494db596f8b1e10a00497d~mv2.jpg/v1/fill/w_490,h_408,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_1dc03c0bf1494db596f8b1e10a00497d~mv2.jpg"
-                                alt="pila4.8v">
-                            <p>Bateria y Cargador 4.8v - 700Ah para juguetes y carrito RC conector neg</p>
-                            <p><span class="price-old">$365.00</span><br><span class="price-new">$346.75</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 2 -->
-                        <div class="product">
-                            <span class="discount">-5%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_607b8a73e35b4ba5a7de93d53100135b~mv2.jpg/v1/fill/w_471,h_473,al_c,q_85,usm_0.66_1.00_0.01/714b8e_607b8a73e35b4ba5a7de93d53100135b~mv2.jpg"
-                                alt="pila6v">
-                            <p>Bateria y Cargador 6v - 1000Ah para juguetes y carrito RC conector negro</p>
-                            <p><span class="price-old">$420.00</span><br><span class="price-new">$399.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 3 -->
-                        <div class="product">
-                            <span class="discount">-5%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_1705d357e33d4a2ca28c91076a68c801~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_1705d357e33d4a2ca28c91076a68c801~mv2.jpg"
-                                alt="pila7.2">
-                            <p>Bateria y Cargador 7.2v - 700Ah para juguetes y carrito RC conector negro</p>
-                            <p><span class="price-old">$415.00</span><br><span class="price-new">$394.25</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 4 -->
-                        <div class="product">
-                            <span class="discount">-20%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_af25006da7524582a05b1a26fc82dfe8~mv2.jpg/v1/fill/w_452,h_490,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_af25006da7524582a05b1a26fc82dfe8~mv2.jpg"
-                                alt="pila96v">
-                            <p>Bateria y Cargador 9.6v - 1000Ah para juguetes y carrito RC conector TAMIYA</p>
-                            <p><span class="price-old">$520.00</span><br><span class="price-new">$416.00</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                        <!-- Producto 5 -->
-                        <div class="product">
-                            <span class="discount">-35%</span>
-                            <img src="https://static.wixstatic.com/media/714b8e_3c55d8a26c38444881bae553701ec770~mv2.jpg/v1/fill/w_273,h_446,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/714b8e_3c55d8a26c38444881bae553701ec770~mv2.jpg"
-                                alt="bateria76v">
-                            <p>Batería 7.2v - 3600Ah Para Rc, Irobot, Craftsman, Duratrax</p>
-                            <p><span class="price-old">$825.00</span><br><span class="price-new">$536.25</span></p>
-                            <a class="buy-button" href="#">COMPRAR AHORA</a>
-                        </div>
-
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="prev" onclick="moveCarousel('carousel-3', -1)">
-                            <img src="./img/left.svg" class="icon-left" alt="left">
-                        </button>
-                        <button class="next" onclick="moveCarousel('carousel-3', 1)">
-                            <img src="./img/rigth.svg" class="icon-rigth" alt="rigth">
-                        </button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-container">
+                    <div class="carousel" id="carousel-3"></div>
+                  
+                      <div class="carousel-controls">
+                        <button class="prev" onclick="moveCarousel('carousel-3', -1)">‹</button>
+                        <button class="next" onclick="moveCarousel('carousel-3', 1)">›</button>
+                      </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="knowledge">
@@ -372,6 +218,9 @@
     <script src="./js/slider.js"></script>
     <script src="./js/search.js"></script> 
     <script src="./js/menu.js"></script>
+    <script src="./js/carrito.js"></script>   <!-- 👈 ESTE FALTABA -->
+    <script src="./js/productos.js"></script>
+
 </body>
 
 </html>

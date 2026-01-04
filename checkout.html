@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+<main class="container">
+  <a href="carrito.html">⬅ Volver al carrito</a>
+  <h1>🧾 Finalizar compra</h1>
+
+  <form id="checkout-form">
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <input type="email" id="email" placeholder="Correo electrónico" required>
+    <input type="tel" id="telefono" placeholder="Teléfono / WhatsApp" required>
+    <textarea id="direccion" placeholder="Dirección de envío" required></textarea>
+
+    <!--boton de finalizar compra-->
+    <button id="checkout-btn" onclick="finalizarCompra()">
+        Finalizar compra
+    </button>
+      
+    <!-- Overlay de estado -->
+    <div id="checkout-overlay" class="checkout-overlay hidden">
+     <div class="checkout-box">
+        <div class="loader"></div>
+        <p id="checkout-text">Procesando tu compra...</p>
+     </div>
+    </div>
+  </form>
+</main>
+
+<script src="./js/checkout.js"></script>
+</body>
+</html>

@@ -1,130 +1,123 @@
-//carrito.js
-document.addEventListener('DOMContentLoaded', () => {
-    const contenedorCarrito = document.querySelector('.carrito-items');
-    const totalCarrito = document.querySelector('.carrito-precio-total');
-    const carritoContainer = document.getElementById('carrito-container');
-    const contenedorProductos = document.querySelector('.contenedor-items');
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    // Escuchar el evento personalizado desde filtro-marcas.js
-    document.addEventListener('producto-agregado', function (e) {
-        const producto = e.detail;
-        agregarAlCarrito(producto);
+function renderCarrito() {
+  const contenedor = document.getElementById("cart-items");
+  const totalSpan = document.getElementById("cart-total");
+
+  contenedor.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(producto => {
+    total += producto.price * producto.cantidad;
+
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+
+    div.innerHTML = `
+      <img src="${producto.image}" alt="${producto.name}" width="80">
+      <div>
+        <h4>${producto.name}</h4>
+        <p>$${producto.price}</p>
+
+        <button onclick="cambiarCantidad(${producto.id}, -1)">−</button>
+        <span> ${producto.cantidad} </span>
+        <button onclick="cambiarCantidad(${producto.id}, 1)">+</button>
+
+        <br><br>
+        <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+      </div>
+    `;
+
+    contenedor.appendChild(div);
+  });
+
+  actualizarTotalConEnvio(total);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function cambiarCantidad(id, cambio) {
+  const producto = carrito.find(p => p.id === id);
+  if (!producto) return;
+
+  producto.cantidad += cambio;
+
+  if (producto.cantidad <= 0) {
+    carrito = carrito.filter(p => p.id !== id);
+  }
+
+  renderCarrito();
+}
+
+function eliminarProducto(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  renderCarrito();
+}
+
+function vaciarCarrito() {
+  carrito = [];
+  localStorage.removeItem("carrito");
+  renderCarrito();
+}
+
+  //seleccion visual del carrito 
+
+  function seleccionarEnvio(elemento, costo) {
+    document.querySelectorAll(".envio-opcion").forEach(op => {
+      op.classList.remove("active");
     });
+  
+    elemento.classList.add("active");
+  
+    localStorage.setItem("envioSeleccionado", costo);
+  
+    renderCarrito(); // 👈 ESTO ES CLAVE
+  }
+  
 
-    function agregarAlCarrito(producto) {
-        const nombresCarrito = contenedorCarrito.querySelectorAll('.carrito-item-titulo');
-        for (let nombre of nombresCarrito) {
-            if (nombre.innerText === producto.modelo) {
-                alert('Este producto ya está en el carrito');
-                return;
-            }
-        }
+  document.addEventListener("DOMContentLoaded", () => {
+    renderCarrito();
+  });
+  
 
-        const nuevoItem = document.createElement('div');
-        nuevoItem.classList.add('carrito-item');
-        nuevoItem.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.modelo}" width="80px">
-            <div class="carrito-item-detalles">
-                <span class="carrito-item-titulo">${producto.modelo}</span>
-                <div class="selector-cantidad">
-                    <i class="fa-solid fa-minus restar-cantidad"></i>
-                    <input type="text" value="${producto.cantidad || 1}" class="carrito-item-cantidad" readonly>
-                    <i class="fa-solid fa-plus sumar-cantidad"></i>
-                </div>
-                <span class="carrito-item-precio">$${parseFloat(producto.precio || 0).toFixed(2)}</span>
-            </div>
-            <span class="btn-eliminar">
-                <i class="fa-solid fa-trash"></i>
-            </span>
-        `;
-
-        contenedorCarrito.appendChild(nuevoItem);
-        agregarEventosCarrito(nuevoItem);
-        actualizarTotal();
-        actualizarCarritoUI();
-        guardarCarritoEnLocalStorage();
+function actualizarTotalConEnvio(subtotal) {
+    const envio = Number(localStorage.getItem("envioSeleccionado")) || 0;
+    const totalFinal = subtotal + envio;
+  
+    const totalSpan = document.getElementById("cart-total");
+    if (totalSpan) {
+      totalSpan.textContent = totalFinal.toFixed(2);
     }
+}
 
-    function agregarEventosCarrito(item) {
-        item.querySelector('.btn-eliminar').addEventListener('click', () => {
-            item.remove();
-            actualizarTotal();
-            actualizarCarritoUI();
-            guardarCarritoEnLocalStorage();
-        });
-
-        item.querySelector('.sumar-cantidad').addEventListener('click', () => {
-            let cantidad = item.querySelector('.carrito-item-cantidad');
-            cantidad.value = parseInt(cantidad.value) + 1;
-            actualizarTotal();
-            guardarCarritoEnLocalStorage();
-        });
-
-        item.querySelector('.restar-cantidad').addEventListener('click', () => {
-            let cantidad = item.querySelector('.carrito-item-cantidad');
-            if (parseInt(cantidad.value) > 1) {
-                cantidad.value = parseInt(cantidad.value) - 1;
-                actualizarTotal();
-                guardarCarritoEnLocalStorage();
-            }
-        });
+function calcularEnvio() {
+    const cp = document.getElementById("cp").value;
+  
+    if (cp.length !== 5) {
+      alert("Ingresa un Código Postal válido");
+      return;
     }
-
-    function actualizarTotal() {
-        let total = 0;
-        const items = document.querySelectorAll('.carrito-item');
-        items.forEach(item => {
-            const precioTexto = item.querySelector('.carrito-item-precio')?.innerText.replace(/[^0-9.]/g, '') || "0";
-            const precio = parseFloat(precioTexto);
-            const cantidad = parseInt(item.querySelector('.carrito-item-cantidad').value);
-
-            if (!isNaN(precio) && !isNaN(cantidad)) {
-                total += precio * cantidad;
-            }
-        });
-        totalCarrito.innerText = `$${total.toFixed(2)}`;
+  
+    let costoEnvio = 0;
+  
+    // 🔵 SIMULACIÓN POR ZONA
+    if (cp.startsWith("44")) {
+      costoEnvio = 120; // Guadalajara
+    } else if (cp.startsWith("45")) {
+      costoEnvio = 150;
+    } else {
+      costoEnvio = 200; // resto del país
     }
-
-
-    function actualizarCarritoUI() {
-        const items = document.querySelectorAll('.carrito-item');
-        if (items.length === 0) {
-            carritoContainer.classList.add('oculto');
-            contenedorProductos.style.flex = '1 1 100%';
-        } else {
-            carritoContainer.classList.remove('oculto');
-            contenedorProductos.style.flex = '1 1 60%';
-        }
-    }
-
-    function guardarCarritoEnLocalStorage() {
-        const items = [];
-        document.querySelectorAll('.carrito-item').forEach(item => {
-            const modelo = item.querySelector('.carrito-item-titulo').innerText;
-            const precio = parseFloat(item.querySelector('.carrito-item-precio').innerText.replace('$', ''));
-            const imagen = item.querySelector('img').src;
-            const cantidad = parseInt(item.querySelector('.carrito-item-cantidad').value);
-            items.push({ modelo, precio, imagen, cantidad });
-        });
-        localStorage.setItem('carrito', JSON.stringify(items));
-    }
-
-    function restaurarCarritoDesdeLocalStorage() {
-        const datos = localStorage.getItem('carrito');
-        if (datos) {
-            const productosGuardados = JSON.parse(datos);
-            if (productosGuardados.length === 0) {
-                actualizarCarritoUI(); // Ocultar si no hay productos
-            } else {
-                productosGuardados.forEach(producto => {
-                    agregarAlCarrito(producto);
-                });
-            }
-        } else {
-            actualizarCarritoUI();
-        }
-    }
-
-    // Cargar productos al iniciar
-    restaurarCarritoDesdeLocalStorage();
-});
+  
+    localStorage.setItem("envioSeleccionado", costoEnvio);
+  
+    document.getElementById("envio-result").innerHTML = `
+      <div class="envio-opcion active">
+        Envío estándar: $${costoEnvio}
+      </div>
+    `;
+  
+    renderCarrito();
+  }
+  
+  
+  
