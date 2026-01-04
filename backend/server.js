@@ -87,6 +87,11 @@ Total: $${total}
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Servidor BatteryShop funcionando 🚀");
+});
+
+
 app.listen(4000, () => {
   console.log("Servidor en http://localhost:4000");
 });
