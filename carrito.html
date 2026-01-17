@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de compras</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+
+  <main class="container cart-container">
+    <h1>🛒 Tu carrito</h1>
+     
+    <div id="cart-items"></div>
+ 
+
+    <h2>Total: $<span id="cart-total">0</span></h2>
+
+      
+
+    <!--Selevtor de Envio-->
+    <section class="shipping-section">
+        <h3>🚚 Envío</h3>
+      
+        <div class="shipping-calc">
+          <input 
+            type="text" 
+            id="cp" 
+            placeholder="Ingresa tu Código Postal"
+            maxlength="5"
+          >
+          <button onclick="calcularEnvio()">Calcular envío</button>
+        </div>
+      
+        <div id="envio-result" class="shipping-options"></div>
+      </section>
+      
+    <a href="checkout.html" class="btn-checkout">
+    Finalizar compra
+    </a>  
+      <br><br>
+    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+    <br><br>
+    <a href="index.html">⬅ Volver a la tienda</a>
+
+  </main>
+
+  <script src="./js/carrito.js"></script>
+</body>
+</html>
